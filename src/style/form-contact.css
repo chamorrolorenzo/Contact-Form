@@ -9,12 +9,21 @@
   --white: hsl(0, 0%, 100%);
   --grey-500: hsl(186, 15%, 59%);
   --grey-900: hsl(187, 24%, 22%);
-
-  /* 🔤 Tipografía */
   --font-family: "Karla", sans-serif;
   --font-size: 16px;
 }
 
+body {
+  background-color: hsl(148, 38%, 91%); /* verde claro */
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  min-height: 100vh;       
+}
 .form-container {
   background-color: var(--white);
   padding: 2rem;
@@ -24,6 +33,7 @@
   max-width: 640px;
   box-sizing: border-box;
   }
+  
 .form-container h1 {
   color: var(--grey-900);
   font-family: var(--font-family);
@@ -33,22 +43,26 @@
 
 .name{
   display: flex;
-  color: var(--grey-900);
   font-weight: 700;
   margin-bottom: 1rem;
   gap: 10px;
+}
+
+/* ✅ Al pasar el mouse */
+input:hover, 
+textarea:hover {
+border-color: hsl(169, 82%, 27%);    
+outline: 3px solid hsl(148, 38%, 91%);   
 }
 
 form input,
 form textarea {
   width: 100%;
   padding: 0.8rem 1rem;
-  margin-top: 0.5rem;
   border: 1px solid var(--grey-500);
   border-radius: 8px;
   font-family: var(--font-family);
   font-size: var(--font-size);
-  color: var(--grey-900);
   box-sizing: border-box;
 }
 
@@ -57,7 +71,7 @@ form textarea {
  }
 
 /* 🔘 Radios y Checkbox */
-/* 🔲 Recuadros de las opciones (Query Type) */
+
 form fieldset {
   display: flex;
    gap: 1rem;
@@ -78,26 +92,30 @@ form fieldset label {
    white-space: nowrap;
    align-items: center;
 }
+
+fieldset label:hover {
+  border-color: hsl(169, 82%, 27%);
+  outline: 3px solid hsl(148, 38%, 91%); 
+}
+
 form fieldset label p {
   margin: 0;
   position: relative;
-  left: -100px; /* acercá o alejás el texto al radio */
+  left: -100px; 
+}
+
+
+/* ✅ Fondo verde claro cuando se selecciona */
+label:has(input[type="radio"]:checked) {
+  background-color: hsl(148, 38%, 91%);  /* verde claro */
+  border-color: hsl(169, 82%, 27%);      /* verde medio */
 }
 
 /* Radio: tamaño y color */
 form fieldset input[type="radio"] {
  transform: scale(1.2);
-
-}
-
-/* Estado seleccionado */
-form fieldset input[type="radio"]:checked + span {
-  color: var(--grey-900);
-}
-
-form fieldset input[type="radio"]:checked {
- 
-  outline-offset: 2px;
+ accent-color: hsl(169, 82%, 27%);
+  
 }
 
 form legend {
@@ -107,7 +125,34 @@ form legend {
   display: block;
 }
 
-.checkbox{}
+input[type="checkbox"] {
+  accent-color: hsl(169, 82%, 27%); /* verde medio */
+   width: 18px;   /* ✅ más chico */
+  height: 18px;  /* mantené la proporción */
+  cursor: pointer;
+ }
+
+.checkbox {
+  display: flex;
+  width: 500px;
+  padding: 20px;
+  border: none;          /* ✅ elimina la línea negra */
+    
+ }
+
+ 
+
+.checkbox span {
+  margin-left: 15px;
+  margin-top: 3px;
+}
+
+.checkbox input {
+ margin-left: -20px;
+ border: none;
+
+}
+
 
 /* 🚀 Botón de envío */
 form button[type="submit"] {
@@ -128,3 +173,17 @@ form button[type="submit"]:hover {
   background-color: hsl(169, 82%, 22%);
 }
 
+small {
+  color: hsl(0, 66%, 54%); /* rojo de error */
+  font-size: 0.875rem;
+}
+
+.success-message {
+  background-color: hsl(148, 38%, 91%);
+  border: 1px solid hsl(169, 82%, 27%);
+  color: hsl(169, 82%, 27%);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+}
