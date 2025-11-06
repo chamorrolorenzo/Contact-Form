@@ -1,7 +1,130 @@
-.form-container {
-  background-color: lightblue;
-  padding: 20px;
-}.form-container {
-  background-color: lightblue;
-  padding: 20px;
+
+:root {
+  /* 🎨 Colores primarios */
+  --green-200: hsl(148, 38%, 91%);
+  --green-600: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+
+  /* 🎨 Colores neutros */
+  --white: hsl(0, 0%, 100%);
+  --grey-500: hsl(186, 15%, 59%);
+  --grey-900: hsl(187, 24%, 22%);
+
+  /* 🔤 Tipografía */
+  --font-family: "Karla", sans-serif;
+  --font-size: 16px;
 }
+
+.form-container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 640px;
+  box-sizing: border-box;
+  }
+.form-container h1 {
+  color: var(--grey-900);
+  font-family: var(--font-family);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.name{
+  display: flex;
+  color: var(--grey-900);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  gap: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid var(--grey-500);
+  border-radius: 8px;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--grey-900);
+  box-sizing: border-box;
+}
+
+form textarea {
+  min-height: 150px;
+ }
+
+/* 🔘 Radios y Checkbox */
+/* 🔲 Recuadros de las opciones (Query Type) */
+form fieldset {
+  display: flex;
+   gap: 1rem;
+  border: none;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 1.5rem;
+}
+
+form fieldset label {
+ width: 245px;;
+  border: 1px solid var(--grey-500);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 8rem;
+  cursor: pointer;
+   white-space: nowrap;
+   align-items: center;
+}
+form fieldset label p {
+  margin: 0;
+  position: relative;
+  left: -100px; /* acercá o alejás el texto al radio */
+}
+
+/* Radio: tamaño y color */
+form fieldset input[type="radio"] {
+ transform: scale(1.2);
+
+}
+
+/* Estado seleccionado */
+form fieldset input[type="radio"]:checked + span {
+  color: var(--grey-900);
+}
+
+form fieldset input[type="radio"]:checked {
+ 
+  outline-offset: 2px;
+}
+
+form legend {
+  font-weight: 700;
+  color: var(--grey-900);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.checkbox{}
+
+/* 🚀 Botón de envío */
+form button[type="submit"] {
+  background-color: var(--green-600);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 1.5rem;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: hsl(169, 82%, 22%);
+}
+

@@ -23,19 +23,19 @@ export default function FormContact() {
           Email Address *
           <input type="email"name="email"/>
         </label>
-      </form>
+     
 
       <fieldset>
         <legend>Query Type *</legend>
-
-         <label>
+        
+         <label >
           <input type="radio" name="queryType" value="general" />
-          General Enquiry
+          <p>General Enquiry</p>
          </label>
 
         <label>
           <input type="radio" name="queryType" value="support" />
-          Support Request
+           <p>Support Request</p>
         </label>
       </fieldset>
 
@@ -44,13 +44,13 @@ export default function FormContact() {
         <textarea name="message"></textarea>
       </label>
 
-      <label>
+      <label className="checkbox">
        <input type="checkbox" name="consent" />
-       I consent to being contacted by the team
+       <p>I consent to being contacted by the team</p>
       </label>
 
       <button type="submit">Submit</button>
-
+</form>
     </section> 
   );
 }
